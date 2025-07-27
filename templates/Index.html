@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Grade Predictor</title>
+
+    <!-- ✅ UPDATED: Link to animated style.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- ✅ UPDATED: Theme switcher -->
+    <div class="theme-toggle">
+        <label for="themeSelect">Theme:</label>
+        <select id="themeSelect" onchange="changeTheme()">
+            <option value="light">☀️ Light</option>
+            <option value="dark">🌙 Dark</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <!-- ✅ UPDATED: Heading animated by CSS -->
+        <h2>🎓 Student Grade Predictor</h2>
+
+        <form action="/predict" method="post">
+            <label>Age:</label>
+            <input type="number" name="Age" required>
+
+            <label>Gender:</label>
+            <select name="Gender">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+
+            <label>Study Hours:</label>
+            <input type="number" name="StudyHours" required>
+
+            <label>Sleep Hours:</label>
+            <input type="number" name="SleepHours" required>
+
+            <label>Attendance (%):</label>
+            <input type="number" name="Attendance" required>
+
+            <label>Homework Done:</label>
+            <select name="HomeworkDone">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label>Internet Usage (hrs):</label>
+            <input type="number" name="InternetUsage" required>
+
+            <label>Part-Time Job:</label>
+            <select name="PartTimeJob">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label>Class Participation (1–5):</label>
+            <input type="number" name="ClassParticipation" min="1" max="5">
+
+            <label>Health Rating (1–10):</label>
+            <input type="number" name="HealthRating" min="1" max="10">
+
+            <label>Parent Education (0=none, 1=school, 2=college):</label>
+            <input type="number" name="ParentEducation" min="0" max="2">
+
+            <label>Travel Time (hrs):</label>
+            <input type="number" name="TravelTime">
+
+            <label>Past Failures:</label>
+            <input type="number" name="PastFailures">
+
+            <label>Family Support:</label>
+            <select name="FamilySupport">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label>Extra Activities:</label>
+            <select name="ExtraActivities">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <!-- ✅ UPDATED: Button animated on hover -->
+            <input type="submit" value="Predict Grade">
+        </form>
+
+        {% if prediction_text %}
+            <!-- ✅ UPDATED: Result div uses fadeIn animation -->
+            <div class="result">
+                <h3>{{ prediction_text }}</h3>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- ✅ ADDED: Theme switch script -->
+    <script>
+        function changeTheme() {
+            const theme = document.getElementById('themeSelect').value;
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        }
+
+        // Optional: Set default theme based on system preference
+        window.onload = function () {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            if (prefersDark) {
+                document.getElementById('themeSelect').value = 'dark';
+                changeTheme();
+            }
+        }
+    </script>
+</body>
+</html>
