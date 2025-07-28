@@ -1,7 +1,6 @@
 services:
   - type: web
     name: flaskapp
-    env: python
+    runtime: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
-    pythonVersion: 3.10.13
