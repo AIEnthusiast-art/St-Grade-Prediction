@@ -57,41 +57,38 @@ This tool can help educators identify students at risk and improve learning outc
 ### Steps
 
 1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/grade-prediction-app.git
-cd grade-prediction-app
-Create a virtual environment:
+    ```
+    git clone https://github.com/yourusername/grade-prediction-app.git
+    cd grade-prediction-app
+    ```
+2. Create a virtual environment:
+    ```
+    python -m venv venv
+    ```
 
-bash
-Copy
-Edit
-python -m venv venv
-Activate the virtual environment:
+3. Activate the virtual environment:
 
-Windows:
+    Windows:
+    ```
+    venv\Scripts\activate
+    ```
 
-bash
-Copy
-Edit
-venv\Scripts\activate
-Linux/MacOS:
+    Linux/MacOS:
+    ```
+    source venv/bin/activate
+    ```
 
-bash
-Copy
-Edit
-source venv/bin/activate
-Install dependencies:
+4. Install dependencies:
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the app:
+    ```
+    pip install -r requirements.txt
+    ```
 
-bash
-Copy
-Edit
-python app.py
+5. Run the app:
+    ```
+    python app.py
+    ```
+
 Open your browser at http://localhost:8000 (if FastAPI) or the interface provided.
 
 🎯 Usage
@@ -116,12 +113,6 @@ Display results with visualization
 
 Machine Learning models used: Random Forest, Linear Regression, or XGBoost (depending on dataset).
 
-📸 Screenshots
-
-Home interface for entering student data
-
-
-Predicted vs Actual grades visualization
 
 💻 Technologies Used
 Backend: Python, FastAPI / Flask
