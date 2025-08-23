@@ -147,15 +147,15 @@ Contributions are welcome! Please follow these steps:
 Fork the repository
 
 Create a new branch: 
-'''git checkout -b feature-name'''
+    ```git checkout -b feature-name    ```
 
 Commit your changes:
- '''
-    git commit -m 'Add feature'''
+    ```
+    git commit -m 'Add feature    ```
 
 Push to the branch:
 
-''' git push origin feature-name'''
+    ``` git push origin feature-name    ```
 
 Open a Pull Request
 
