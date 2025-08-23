@@ -91,7 +91,7 @@ This tool can help educators identify students at risk and improve learning outc
 
 Open your browser at http://localhost:8000 (if FastAPI) or the interface provided.
 
-###🎯 Usage
+### 🎯 Usage
 Input student data manually or upload a CSV.
 
 Click Predict to get the predicted grades.
@@ -100,7 +100,7 @@ Visualize predictions via interactive charts.
 
 Download the results for record-keeping.
 
-###🧠 How It Works
+### 🧠 How It Works
 Data preprocessing and cleaning
 
 Feature selection based on academic relevance
@@ -114,7 +114,7 @@ Display results with visualization
 Machine Learning models used: Random Forest, Linear Regression, or XGBoost (depending on dataset).
 
 
-###💻 Technologies Used
+### 💻 Technologies Used
 Backend: Python, FastAPI / Flask
 
 Frontend: HTML, CSS, JavaScript (or Streamlit for simplicity)
@@ -123,7 +123,7 @@ Machine Learning: Scikit-learn, XGBoost, Pandas, NumPy
 
 Visualization: Matplotlib, Seaborn, Plotly
 
-###⚡ Challenges & Learnings
+### ⚡ Challenges & Learnings
 Handling missing or inconsistent student data
 
 Choosing the best model for accurate predictions
@@ -132,7 +132,7 @@ Optimizing the web interface for non-technical users
 
 Ensuring fast prediction for batch inputs
 
-###🚀 Future Improvements
+### 🚀 Future Improvements
 Integrate real-time predictive analytics
 
 Add personalized recommendations for students
@@ -141,7 +141,7 @@ Expand to predict subject-wise performance trends
 
 Mobile-friendly interface and cloud deployment
 
-###🤝 Contributing
+### 🤝 Contributing
 Contributions are welcome! Please follow these steps:
 
 Fork the repository
@@ -164,7 +164,7 @@ Open a Pull Request
 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-###📞 Contact
+### 📞 Contact
 Tariq Ahmad
 
 Email: t.4hmad208@gmail.com
