@@ -15,19 +15,31 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
+        study_hours = float(request.form['StudyHours'])
+        sleep_hours = float(request.form['SleepHours'])
+        internet_hours = float(request.form['InternetUsage'])
+        travel_hours = float(request.form['TravelTime'])
+
+        # 🛑 Validation: Check if total hours exceed 24
+        total_hours = study_hours + sleep_hours + internet_hours + travel_hours
+        if total_hours > 24:
+            error_msg = f"Error: You entered a total of {total_hours} hours, which exceeds 24 hours in a day. ⏳ Please adjust your inputs."
+            return render_template('index.html', prediction_text=error_msg)
+
+        # ✅ If valid, continue
         features = [
             float(request.form['Age']),
             float(request.form['Gender']),
-            float(request.form['StudyHours']),
-            float(request.form['SleepHours']),
+            study_hours,
+            sleep_hours,
             float(request.form['Attendance']),
             float(request.form['HomeworkDone']),
-            float(request.form['InternetUsage']),
+            internet_hours,
             float(request.form['PartTimeJob']),
             float(request.form['ClassParticipation']),
             float(request.form['HealthRating']),
             float(request.form['ParentEducation']),
-            float(request.form['TravelTime']),
+            travel_hours,
             float(request.form['PastFailures']),
             float(request.form['FamilySupport']),
             float(request.form['ExtraActivities'])
@@ -50,6 +62,3 @@ def predict():
 
     except Exception as e:
         return render_template('index.html', prediction_text=f'Error: {str(e)}')
-
-if __name__ == '__main__':
-    app.run(debug=True)
